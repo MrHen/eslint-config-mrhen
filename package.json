@@ -1,0 +1,22 @@
+{
+  "name": "eslint-config-mrhen",
+  "version": "1.0.0",
+  "description": "An extremely opinionated ESLint config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrHen/eslint-config-mrhen.git"
+  },
+  "author": "Adam Babcock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrHen/eslint-config-mrhen/issues"
+  },
+  "homepage": "https://github.com/MrHen/eslint-config-mrhen#readme",
+  "peerDependencies": {
+    "eslint-plugin-unicorn": "^9.1.1"
+  }
+}
