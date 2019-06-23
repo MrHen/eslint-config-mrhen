@@ -150,7 +150,70 @@ const {
 
 Since (B.2) is preferable over (A.2), (B.1) is preferable over (A.1).
 
+### Avoid surprises
+
+Don't be clever. Code that requires lots of comments or documentation tends to be overly complicated. Code that is dense or uses too much syntactic sugar is hard to read and can lead to results that surprise the reader.
+
+#### Examples
+
+```js
+// A
+const foo = alfa ? 1 : beta ? charlie ? 1000 : 100 : 0;
+
+// B
+let foo;
+if (alfa) {
+    foo = 1;
+} else if (beta) {
+    if (charlie) {
+        foo = 1000
+    } else {
+        foo = 100;
+    }
+} else {
+    foo = 0;
+}
+```
+
+Ternaries are notoriously difficult to read and nested ternaries are all-around terrible.
+
+----
+
+```js
+function doFoo(numbers) {
+    for (const number in numbers) {
+        switch(number) {
+            case 0:
+                console.log('Zero');
+                break;
+            case 1:
+                console.log('One');
+                break;
+            case 2:
+                console.log('Two');
+                break;
+            case 3:
+                console.log('Three');
+                return;
+            case 4:
+                console.log('Four');
+                break;
+            case 5:
+                console.log('Five');
+                break;
+            default:
+                console.log('More than Five');
+        }
+    }
+}
+```
+
+Code branches should act like other nearby code branches. If a branch has special logic or behavior it should be immediately obvious. (Sadly, there is no rule currently checking for the above scenario.)
+
+#### Related rules
+
+* [`consistent-return`](https://eslint.org/docs/rules/consistent-return)
+
 ## Rules
 
 Below is an explanation of why each rule was adopted and examples of when it matters.
-
