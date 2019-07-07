@@ -90,6 +90,11 @@ Extraneous blank lines hurt readability by signaling an important syntactical el
 
 Rapidly switching between JavaScript and Python is hard enough already. Unnecessary and meaningless blank lines make it harder.
 
+#### Related rules
+
+* [curly](https://eslint.org/docs/rules/curly)
+* [dot-location](https://eslint.org/docs/rules/dot-location)
+
 ### Consistency over being concise
 
 There are a lot of different ways to write the same functional code. Most styles let the author choose the pattern appropriate for the circumstance. This config deliberately limits things to the most readable variant that still covers the majority of situations. It pushes back against the temptation to reduce line count for the sake of brevity -- it is often more readable to leave it in a more verbose form.
@@ -213,6 +218,10 @@ Code branches should act like other nearby code branches. If a branch has specia
 #### Related rules
 
 * [`consistent-return`](https://eslint.org/docs/rules/consistent-return)
+
+### Optimize for common scenarios
+
+ESLint provides easy ways to mark lines of code as exceptions. Not every lint error will be completely accurate -- that does not mean the rule should be unused. That means the rule *should* be used and the exceptions marked with an explanation.
 
 ## Rules
 

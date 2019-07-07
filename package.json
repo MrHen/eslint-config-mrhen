@@ -16,7 +16,12 @@
     "url": "https://github.com/MrHen/eslint-config-mrhen/issues"
   },
   "homepage": "https://github.com/MrHen/eslint-config-mrhen#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-plugin-unicorn": "^9.1.1"
+  },
   "peerDependencies": {
+    "eslint": "^6.0.1",
     "eslint-plugin-unicorn": "^9.1.1"
   }
 }
