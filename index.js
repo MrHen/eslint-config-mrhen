@@ -121,8 +121,6 @@ const undocumented = {
     "no-new-func": "error",
     "no-new-object": "error",
     "no-new-require": "error",
-    "no-new-symbol": "error",
-    "no-new-wrappers": "error",
     "no-obj-calls": "error",
     "no-octal": "error",
     "no-octal-escape": "error",
@@ -130,7 +128,6 @@ const undocumented = {
     "no-path-concat": "error",
     "no-plusplus": "error",
     "no-process-env": "error",
-    "no-process-exit": "error",
     "no-proto": "error",
     "no-prototype-builtins": "error",
     "no-redeclare": "error",
@@ -228,7 +225,35 @@ const undocumented = {
     "template-curly-spacing": "error",
     "template-tag-spacing": "error",
     "unicode-bom": "error",
+    "unicorn/catch-error-name": "error",
+    "unicorn/custom-error-definition": "error",
+    "unicorn/error-message": "error",
+    "unicorn/escape-case": "error",
+    "unicorn/explicit-length-check": "error",
+    "unicorn/filename-case": "error",
+    "unicorn/import-index": "error",
+    "unicorn/new-for-builtins": "error",
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-array-instanceof": "error",
+    "unicorn/no-console-spaces": "error",
+    "unicorn/no-fn-reference-in-iterator": "error",
+    "unicorn/no-for-loop": "error",
+    "unicorn/no-hex-escape": "error",
+    // TODO: "unicorn/no-keyword-prefix": "error",
+    "unicorn/no-process-exit": "error",
+    "unicorn/no-unreadable-array-destructuring": "error",
+    "unicorn/no-unsafe-regex": "off",
+    "unicorn/no-unused-properties": "error",
+    "unicorn/no-zero-fractions": "error",
+    "unicorn/number-literal-case": "error",
+    "unicorn/prefer-exponentiation-operator": "error",
     "unicorn/prefer-flat-map": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-spread": "error",
+    "unicorn/prefer-starts-ends-with": "error",
+    "unicorn/prefer-type-error": "error",
+    "unicorn/regex-shorthand": "error",
+    "unicorn/throw-new-error": "error",
     "use-isnan": "error",
     "valid-typeof": "error",
     "vars-on-top": "off",
@@ -262,6 +287,15 @@ const redundant = {
     "no-label-var": "error",
 
     "no-mixed-requires": "error",
+
+    // Covered by `unicorn/new-for-builtins`
+    "no-new-symbol": "error",
+
+    // Covered by `unicorn/new-for-builtins`
+    "no-new-wrappers": "error",
+
+    // Covered by `unicorn/no-process-exit`
+    "no-process-exit": "off",
 
     // Covered by `no-ternary`
     "no-unneeded-ternary": "error",
@@ -329,6 +363,7 @@ const evalutating = {
     "prefer-destructuring": "error",
     "quote-props": "error",
     "sort-keys": "error",
+    "unicorn/prevent-abbreviations": "error",
     "wrap-iife": "error",
 };
 
