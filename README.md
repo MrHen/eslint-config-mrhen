@@ -219,9 +219,14 @@ Code branches should act like other nearby code branches. If a branch has specia
 
 * [`consistent-return`](https://eslint.org/docs/rules/consistent-return)
 
+
 ### Optimize for common scenarios
 
 ESLint provides easy ways to mark lines of code as exceptions. Not every lint error will be completely accurate -- that does not mean the rule should be unused. That means the rule *should* be used and the exceptions marked with an explanation.
+
+#### Related rules
+
+* [`no-sync`](https://eslint.org/docs/rules/no-sync)
 
 ## Rules
 

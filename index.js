@@ -96,14 +96,37 @@ const undocumented = {
     'use-isnan': 'error',
     'valid-typeof': 'error',
     'vars-on-top': 'off',
-    'yoda': 'error'
+    'yoda': 'error',
+    'init-declarations': 'off',
+    'no-delete-var': 'error',
+    'no-shadow': 'error',
+    'no-shadow-restricted-names': 'error',
+    'no-undef': 'error',
+    'no-undef-init': 'error',
+    'no-undefined': 'error',
+    'no-unused-vars': 'error',
+    'no-use-before-define': 'error',
+    'callback-return': 'error',
+    'global-require': 'error',
+    'no-buffer-constructor': 'error',
+    'no-new-require': 'error',
+    'no-path-concat': 'error',
+    'no-process-env': 'error',
+    'no-process-exit': 'error',
+    'no-sync': 'error',
+    'handle-callback-err': [
+        'error',
+        '^(err|error)$',
+    ],
 }
 
 // Rules possibly redundant because of more restrictive rules
 const redundant = {
     'no-eq-null': 'error', // eqeqeq
     'no-extra-label': 'error', // no-labels
-    'no-unused-labels': 'error' // no-labels
+    'no-unused-labels': 'error', // no-labels
+    'no-label-var': 'error', // no-labels
+    'no-mixed-requires': 'error', //
 };
 
 // Rules that may be removed or reconfigured
