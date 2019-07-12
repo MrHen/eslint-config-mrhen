@@ -14,6 +14,13 @@ foo = [
 ];
 foo = [];
 
+foo = [
+    {
+        "bar": 1,
+        "zaz": 2,
+    },
+];
+
 // array-bracket-newline error
 foo = [
 ];
