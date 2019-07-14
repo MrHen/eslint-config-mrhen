@@ -1,0 +1,7 @@
+.editorconfig
+.eslint*
+.git*
+babel*
+example
+node_modules
+README.md
