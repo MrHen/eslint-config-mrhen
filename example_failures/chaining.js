@@ -1,4 +1,8 @@
-const foo = [1, 2, 3];
+const foo = [
+    1,
+    2,
+    3,
+];
 
 function plusOne(n) {
     return n + 1;
@@ -12,10 +16,10 @@ foo.map(plusOne)
 foo.map(plusOne)
     .map(plusOne);
 
-foo.flatMap((i) => { return i; });
+foo.flatMap((bar) => { return bar; });
 
 // unicorn/prefer-flat-map error
-foo.map((i) => { return i; }).flat();
+foo.map((bar) => { return bar; }).flat();
 
 // dot-location error
 foo.map(plusOne).
