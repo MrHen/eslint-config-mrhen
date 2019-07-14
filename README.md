@@ -9,9 +9,7 @@ There are already a handful of high-quality existing configurations. Notably: [e
 
 Reading and scanning code quickly requires a meaningful visual shape. This is especially true if you are in a position where you need to context switch between multiple languages throughout a single day or week of work.
 
-One of the most important things to detect quickly is complexity. Aligning visual shape with code that increases complexity makes it much easier to hunt down problematic areas in a codebase.
-
-Many lint rules allow code to break the visual flow or do not enforce a consistent shape.
+In paritcular, complexity is one of the most important things to detect quickly. Many of the rules in this config attempt to align visual shape in a way that makes it easier to quickly estimate complexity. This helps maintainers and code reviewers hunt down problematic areas in code.
 
 #### Examples
 
@@ -23,7 +21,7 @@ Many lint rules allow code to break the visual flow or do not enforce a consiste
 });
 ```
 
-A `return` statement being on its own line makes it easier to detect that a function exists by forcing indentation to appear in the visual flow. While keyword highlighting can make the `return` statement pop, the extra line with its indentation means you only need to look at the whitespace to quickly notice the hidden complexity contained in the callback.
+A `return` statement being on its own line makes it easier to detect that a function exists by forcing indentation to appear in the visual flow. While keyword highlighting can make the `return` statement pop, the extra line with its indentation means you only need to look at the whitespace to quickly notice the complexity hidden by the callback.
 
 ----
 
@@ -86,18 +84,20 @@ function doFoo() {
 }
 ```
 
-Extraneous blank lines hurt readability by signaling an important syntactical element. JavaScript uses curly braces to denote scope blocks and, therefore, more than one blank line is rarely needed. Python does _not_, however, so [multiple blank lines](https://www.python.org/dev/peps/pep-0008/#blank-lines) are used to signal differences between areas in code.
+Extraneous blank lines hurt readability by incorrectly signaling an important syntactical element. JavaScript uses curly braces to denote scope blocks and, therefore, more than one blank line is rarely needed. Python does _not_, however, so [multiple blank lines](https://www.python.org/dev/peps/pep-0008/#blank-lines) are used to signal differences between areas in code.
 
 Rapidly switching between JavaScript and Python is hard enough already. Unnecessary and meaningless blank lines make it harder.
 
+<!--
 #### Related rules
 
 * [curly](https://eslint.org/docs/rules/curly)
 * [dot-location](https://eslint.org/docs/rules/dot-location)
+-->
 
-### Consistency over being concise
+### Consistency over conciseness
 
-There are a lot of different ways to write the same functional code. Most styles let the author choose the pattern appropriate for the circumstance. This config deliberately limits things to the most readable variant that still covers the majority of situations. It pushes back against the temptation to reduce line count for the sake of brevity -- it is often more readable to leave it in a more verbose form.
+There are a lot of different ways to write the same functional code. Most styles let the author choose the pattern appropriate for the circumstance -- but many coders prefer consise code over consistent style. This config deliberately limits style to the most readable variant that also covers the majority of situations. It pushes back against the temptation to reduce line count for the sake of brevity -- it is often more readable to leave it in a more verbose form.
 
 #### Examples
 
@@ -215,19 +215,49 @@ function doFoo(numbers) {
 
 Code branches should act like other nearby code branches. If a branch has special logic or behavior it should be immediately obvious. (Sadly, there is no rule currently checking for the above scenario.)
 
+<!--
 #### Related rules
 
 * [`consistent-return`](https://eslint.org/docs/rules/consistent-return)
-
+-->
 
 ### Optimize for common scenarios
 
 ESLint provides easy ways to mark lines of code as exceptions. Not every lint error will be completely accurate -- that does not mean the rule should be unused. That means the rule *should* be used and the exceptions marked with an explanation.
 
+### Prioritize clean code reviews
+
+Code reviews and code diffs happen frequently and diff noise makes it harder to see what changes were being made.
+
+```diff
+// A
+const {
+    alfa,
+    beta,
+-   charlie
++   charlie,
++   delta
+} = this;
+
+// B
+const {
+    alfa,
+    beta,
+    charlie,
++   delta,
+} = this;
+```
+
+Only one change was made but (a) flags an extra line as having changed because of a meaningless comma.
+
+<!--
 #### Related rules
 
 * [`no-sync`](https://eslint.org/docs/rules/no-sync)
+-->
 
+<!--
 ## Rules
 
 Below is an explanation of why each rule was adopted and examples of when it matters.
+-->
