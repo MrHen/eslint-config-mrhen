@@ -10,5 +10,5 @@
             "jsx": true
         }
     },
-    "extends": "./index"
+    "extends": "./src/index"
 }

@@ -1,7 +1,8 @@
 .editorconfig
 .eslint*
 .git*
+.vscode
 babel*
-example
 node_modules
-README.md
+lib/example*
+src/
