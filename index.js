@@ -200,6 +200,18 @@ const undocumented = {
     "prefer-promise-reject-errors": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
+    "promise/always-return": "error",
+    "promise/catch-or-return": "error",
+    "promise/no-callback-in-promise": "error",
+    "promise/no-native": "off",
+    "promise/no-nesting": "error",
+    "promise/no-new-statics": "error",
+    "promise/no-promise-in-callback": "error",
+    "promise/no-return-in-finally": "error",
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "error",
+    "promise/prefer-await-to-then": "error",
+    "promise/valid-params": "error",
     "quotes": "error",
     "radix": "error",
     "react/boolean-prop-naming": "off",
@@ -460,6 +472,8 @@ const evalutating = {
     "no-unused-expressions": "error",
     "object-shorthand": "error",
     "prefer-destructuring": "error",
+    "promise/avoid-new": "error",
+    "promise/prefer-await-to-callbacks": "error",
     "quote-props": "error",
     "react/jsx-curly-newline": [
         "error",
@@ -479,6 +493,7 @@ const evalutating = {
 // eslint-disable-next-line no-undef
 module.exports = {
     "plugins": [
+        "promise",
         "react",
         "unicorn",
     ],
