@@ -1,6 +1,8 @@
-export const presets = [
+const plugins = ["@babel/plugin-proposal-class-properties"];
+
+const presets = [
     [
-        "@babel/env",
+        "@babel/preset-react",
         {
             "targets": {
                 "chrome": "67",
@@ -12,3 +14,9 @@ export const presets = [
         },
     ],
 ];
+
+// eslint-disable-next-line no-undef
+module.exports = {
+    plugins,
+    presets,
+};
