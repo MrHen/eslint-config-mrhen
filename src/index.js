@@ -1,3 +1,5 @@
+const ECMA_VERSION = 2019;
+
 const undocumented = {
     "array-bracket-newline": [
         "error",
@@ -528,6 +530,17 @@ const evalutating = {
 
 // eslint-disable-next-line no-undef
 module.exports = {
+    "env": {
+        "es6": true,
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+        },
+        "ecmaVersion": ECMA_VERSION,
+        "sourceType": "module",
+    },
     "plugins": [
         "babel",
         "promise",
