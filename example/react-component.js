@@ -1,36 +1,39 @@
-import _ from 'lodash';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
 import {
     loadData,
     updateData,
-} from './stubs';
+} from "./stubs";
 
 class App extends React.PureComponent {
     state = {
-        loading: true,
-        hello: null,
+        "hello": null,
+        "loading": true,
     };
 
     componentDidMount = async () => {
         const response = await loadData();
 
+        // eslint-disable-next-line react/no-did-mount-set-state
         this.setState({
-            loading: false,
-            hello: _.get(response, 'hello'),
+            "hello": _.get(
+                response, "hello"
+            ),
+            "loading": false,
         });
-    }
+    };
 
-    handleClick = (event) => {
+    handleClick = () => {
         updateData({
-            hello: ', mom!',
+            "hello": ", mom!",
         });
-    }
+    };
 
     render() {
         const {
             handleClick,
-            state: {
+            "state": {
                 loading,
                 hello,
             },
@@ -51,11 +54,16 @@ class App extends React.PureComponent {
                     {showButton && (
                         <button
                             onClick={handleClick}
+                            type="button"
                         />
                     )}
 
                     <pre>
-                        {JSON.stringify(hello, null, 2)}
+                        {JSON.stringify(
+                            hello,
+                            null,
+                            2,
+                        )}
                     </pre>
                 </header>
             </div>

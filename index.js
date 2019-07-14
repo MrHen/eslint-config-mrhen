@@ -18,6 +18,10 @@ const undocumented = {
     ],
     "arrow-parens": "error",
     "arrow-spacing": "error",
+    "babel/no-invalid-this": "error",
+    "babel/quotes": "error",
+    "babel/semi": "error",
+    "babel/valid-typeof": "error",
     "block-scoped-var": "error",
     "block-spacing": "error",
     "callback-return": "error",
@@ -109,7 +113,6 @@ const undocumented = {
     "no-implied-eval": "error",
     "no-inner-declarations": "error",
     "no-invalid-regexp": "error",
-    "no-invalid-this": "error",
     "no-irregular-whitespace": "error",
     "no-iterator": "error",
     "no-labels": "error",
@@ -212,7 +215,6 @@ const undocumented = {
     "promise/param-names": "error",
     "promise/prefer-await-to-then": "error",
     "promise/valid-params": "error",
-    "quotes": "error",
     "radix": "error",
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
@@ -233,7 +235,15 @@ const undocumented = {
             "props": "never",
         },
     ],
-    "react/jsx-filename-extension": "error",
+    "react/jsx-filename-extension": [
+        "error",
+        {
+            "extensions": [
+                ".js",
+                ".jsx",
+            ],
+        },
+    ],
     "react/jsx-first-prop-new-line": [
         "error",
         "multiline",
@@ -263,7 +273,6 @@ const undocumented = {
             "ignoreCase": true,
         },
     ],
-    "react/jsx-space-before-closing": "error",
     "react/jsx-tag-spacing": "error",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
@@ -317,14 +326,17 @@ const undocumented = {
     "require-unicode-regexp": "error",
     "require-yield": "error",
     "rest-spread-spacing": "error",
-    "semi": "error",
     "semi-spacing": "error",
     "semi-style": "error",
     "sort-imports": "off",
     "space-before-blocks": "error",
     "space-before-function-paren": [
         "error",
-        "never",
+        {
+            "anonymous": "never",
+            "asyncArrow": "always",
+            "named": "never",
+        },
     ],
     "space-in-parens": "error",
     "space-infix-ops": "error",
@@ -350,7 +362,6 @@ const undocumented = {
     "unicorn/no-fn-reference-in-iterator": "error",
     "unicorn/no-for-loop": "error",
     "unicorn/no-hex-escape": "error",
-    // TODO: "unicorn/no-keyword-prefix": "error",
     "unicorn/no-process-exit": "error",
     "unicorn/no-unreadable-array-destructuring": "error",
     "unicorn/no-unsafe-regex": "off",
@@ -366,7 +377,6 @@ const undocumented = {
     "unicorn/regex-shorthand": "error",
     "unicorn/throw-new-error": "error",
     "use-isnan": "error",
-    "valid-typeof": "error",
     "vars-on-top": "off",
     "wrap-regex": "off",
     "yield-star-spacing": "error",
@@ -375,6 +385,9 @@ const undocumented = {
 
 // Rules possibly redundant because of more restrictive rules
 const redundant = {
+    // Covered by `object-curly-newline`
+    "babel/object-curly-spacing": "error",
+
     "consistent-this": "error",
 
     "implicit-arrow-linebreak": "error",
@@ -416,17 +429,15 @@ const redundant = {
 
     "nonblock-statement-body-position": "error",
 
-    // Covered by `object-curly-newline`
-    "object-curly-spacing": "error",
-
     // Covered by `no-var`
     "sort-vars": "off",
 };
 
 // Rules that may be removed or reconfigured
 const evalutating = {
+    "babel/camelcase": "error",
+    "babel/no-unused-expressions": "error",
     "brace-style": "error",
-    "camelcase": "error",
     "class-methods-use-this": "error",
     "func-name-matching": "error",
     "func-names": "error",
@@ -438,7 +449,12 @@ const evalutating = {
         },
     ],
     "guard-for-in": "error",
-    "id-length": "error",
+    "id-length": [
+        "error",
+        {
+            "exceptions": ["_"],
+        },
+    ],
     "lines-around-comment": "error",
     "max-classes-per-file": "error",
     "max-depth": "warn",
@@ -469,16 +485,27 @@ const evalutating = {
     ],
     "no-template-curly-in-string": "error",
     "no-underscore-dangle": "error",
-    "no-unused-expressions": "error",
     "object-shorthand": "error",
-    "prefer-destructuring": "error",
+    "prefer-destructuring": [
+        "error",
+        {
+            "AssignmentExpression": {
+                "array": false,
+                "object": true,
+            },
+            "VariableDeclarator": {
+                "array": false,
+                "object": true,
+            },
+        },
+    ],
     "promise/avoid-new": "error",
     "promise/prefer-await-to-callbacks": "error",
     "quote-props": "error",
     "react/jsx-curly-newline": [
         "error",
         {
-            "multiline": "require",
+            "multiline": "consistent",
             "singleline": "forbid",
         },
     ],
@@ -486,13 +513,23 @@ const evalutating = {
     "react/jsx-props-no-spreading": "error",
     "react/prop-types": "error",
     "sort-keys": "error",
-    "unicorn/prevent-abbreviations": "error",
+    "unicorn/prevent-abbreviations": [
+        "error",
+        {
+            "replacements": {
+                "args": {
+                    "arguments": false,
+                },
+            },
+        },
+    ],
     "wrap-iife": "error",
 };
 
 // eslint-disable-next-line no-undef
 module.exports = {
     "plugins": [
+        "babel",
         "promise",
         "react",
         "unicorn",
