@@ -3,16 +3,16 @@
 let foo;
 
 foo = {
-    "alfa": 0,
+    alfa: 0,
 };
 foo = {
-    "alfa": 0,
-    "beta": 1,
+    alfa: 0,
+    beta: 1,
 };
 foo = {
-    "alfa": 0,
-    "beta": 1,
-    "charlie": 2,
+    alfa: 0,
+    beta: 1,
+    charlie: 2,
 };
 foo = {};
 

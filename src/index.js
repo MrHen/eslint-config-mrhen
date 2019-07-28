@@ -1,11 +1,12 @@
+/* eslint-disable unicorn/prevent-abbreviations */
 const ECMA_VERSION = 2019;
 
 const undocumented = {
     "array-bracket-newline": [
         "error",
         {
-            "minItems": 2,
-            "multiline": true,
+            minItems: 2,
+            multiline: true,
         },
     ],
     "array-bracket-spacing": "error",
@@ -27,17 +28,23 @@ const undocumented = {
     "block-scoped-var": "error",
     "block-spacing": "error",
     "callback-return": "error",
-    "capitalized-comments": "error",
+    "capitalized-comments": [
+        "error",
+        "always",
+        {
+            ignoreConsecutiveComments: true,
+        },
+    ],
     "comma-dangle": [
         "error",
         "always-multiline",
     ],
     "comma-spacing": "error",
     "comma-style": "error",
-    "complexity": "off",
+    complexity: "off",
     "computed-property-spacing": "error",
     "constructor-super": "error",
-    "curly": "error",
+    curly: "error",
     "default-case": "error",
     "dot-location": [
         "error",
@@ -45,7 +52,7 @@ const undocumented = {
     ],
     "dot-notation": "error",
     "eol-last": "error",
-    "eqeqeq": "error",
+    eqeqeq: "error",
     "for-direction": "error",
     "func-call-spacing": "error",
     "generator-star-spacing": "error",
@@ -55,7 +62,7 @@ const undocumented = {
         "error",
         "^(err|error)$",
     ],
-    "indent": "error",
+    indent: "error",
     "init-declarations": "off",
     "jsx-quotes": "error",
     "key-spacing": "error",
@@ -94,7 +101,7 @@ const undocumented = {
     "no-else-return": [
         "error",
         {
-            "allowElseIf": false,
+            allowElseIf: false,
         },
     ],
     "no-empty": "error",
@@ -179,7 +186,7 @@ const undocumented = {
     "object-curly-newline": [
         "error",
         {
-            "minProperties": 1,
+            minProperties: 1,
         },
     ],
     "object-property-newline": "error",
@@ -217,12 +224,12 @@ const undocumented = {
     "promise/param-names": "error",
     "promise/prefer-await-to-then": "error",
     "promise/valid-params": "error",
-    "radix": "error",
+    radix: "error",
     "react/boolean-prop-naming": "off",
     "react/button-has-type": "error",
     "react/default-props-match-prop-types": "error",
     "react/destructuring-assignment": "error",
-    "react/display-name": "error",
+    "react/display-name": "off",
     "react/forbid-component-props": "error",
     "react/forbid-foreign-prop-types": "error",
     "react/forbid-prop-types": "error",
@@ -233,14 +240,14 @@ const undocumented = {
     "react/jsx-curly-brace-presence": [
         "error",
         {
-            "children": "never",
-            "props": "never",
+            children: "never",
+            props: "never",
         },
     ],
     "react/jsx-filename-extension": [
         "error",
         {
-            "extensions": [
+            extensions: [
                 ".js",
                 ".jsx",
             ],
@@ -266,13 +273,13 @@ const undocumented = {
     "react/jsx-sort-default-props": [
         "error",
         {
-            "ignoreCase": true,
+            ignoreCase: true,
         },
     ],
     "react/jsx-sort-props": [
         "error",
         {
-            "ignoreCase": true,
+            ignoreCase: true,
         },
     ],
     "react/jsx-tag-spacing": "error",
@@ -313,7 +320,7 @@ const undocumented = {
     "react/sort-prop-types": [
         "error",
         {
-            "ignoreCase": true,
+            ignoreCase: true,
         },
     ],
     "react/state-in-constructor": [
@@ -335,16 +342,16 @@ const undocumented = {
     "space-before-function-paren": [
         "error",
         {
-            "anonymous": "never",
-            "asyncArrow": "always",
-            "named": "never",
+            anonymous: "never",
+            asyncArrow: "always",
+            named: "never",
         },
     ],
     "space-in-parens": "error",
     "space-infix-ops": "error",
     "space-unary-ops": "error",
     "spaced-comment": "error",
-    "strict": "error",
+    strict: "error",
     "switch-colon-spacing": "error",
     "symbol-description": "error",
     "template-curly-spacing": "error",
@@ -355,7 +362,7 @@ const undocumented = {
     "unicorn/error-message": "error",
     "unicorn/escape-case": "error",
     "unicorn/explicit-length-check": "error",
-    "unicorn/filename-case": "error",
+    "unicorn/filename-case": "off",
     "unicorn/import-index": "error",
     "unicorn/new-for-builtins": "error",
     "unicorn/no-abusive-eslint-disable": "error",
@@ -382,7 +389,7 @@ const undocumented = {
     "vars-on-top": "off",
     "wrap-regex": "off",
     "yield-star-spacing": "error",
-    "yoda": "error",
+    yoda: "error",
 };
 
 // Rules possibly redundant because of more restrictive rules
@@ -442,19 +449,23 @@ const evalutating = {
     "brace-style": "error",
     "class-methods-use-this": "error",
     "func-name-matching": "error",
-    "func-names": "error",
+    "func-names": [
+        "error",
+        "as-needed",
+    ],
     "func-style": "error",
     "function-paren-newline": [
         "error",
+        // "multiline",
         {
-            "minItems": 2,
+            minItems: 3,
         },
     ],
     "guard-for-in": "error",
     "id-length": [
         "error",
         {
-            "exceptions": ["_"],
+            exceptions: ["_"],
         },
     ],
     "lines-around-comment": "error",
@@ -468,9 +479,9 @@ const evalutating = {
     "no-magic-numbers": [
         "error",
         {
-            "detectObjects": true,
-            "enforceConst": true,
-            "ignore": [
+            detectObjects: true,
+            enforceConst: true,
+            ignore: [
                 0,
                 1,
                 2,
@@ -482,7 +493,7 @@ const evalutating = {
                 8,
                 9,
             ],
-            "ignoreArrayIndexes": true,
+            ignoreArrayIndexes: true,
         },
     ],
     "no-template-curly-in-string": "error",
@@ -491,24 +502,27 @@ const evalutating = {
     "prefer-destructuring": [
         "error",
         {
-            "AssignmentExpression": {
-                "array": false,
-                "object": true,
+            AssignmentExpression: {
+                array: false,
+                object: true,
             },
-            "VariableDeclarator": {
-                "array": false,
-                "object": true,
+            VariableDeclarator: {
+                array: false,
+                object: true,
             },
         },
     ],
     "promise/avoid-new": "error",
     "promise/prefer-await-to-callbacks": "error",
-    "quote-props": "error",
+    "quote-props": [
+        "error",
+        "as-needed",
+    ],
     "react/jsx-curly-newline": [
         "error",
         {
-            "multiline": "consistent",
-            "singleline": "forbid",
+            multiline: "consistent",
+            singleline: "forbid",
         },
     ],
     "react/jsx-fragments": "error",
@@ -518,9 +532,9 @@ const evalutating = {
     "unicorn/prevent-abbreviations": [
         "error",
         {
-            "replacements": {
-                "args": {
-                    "arguments": false,
+            replacements: {
+                args: {
+                    arguments: false,
                 },
             },
         },
@@ -530,37 +544,37 @@ const evalutating = {
 
 // eslint-disable-next-line no-undef
 module.exports = {
-    "env": {
-        "es6": true,
+    env: {
+        es6: true,
     },
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true,
+    parser: "babel-eslint",
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
         },
-        "ecmaVersion": ECMA_VERSION,
-        "sourceType": "module",
+        ecmaVersion: ECMA_VERSION,
+        sourceType: "module",
     },
-    "plugins": [
+    plugins: [
         "babel",
         "promise",
         "react",
         "unicorn",
     ],
-    "rules": {
+    rules: {
         ...undocumented,
         ...redundant,
         ...evalutating,
     },
-    "settings": {
-        "propWrapperFunctions": [
+    settings: {
+        propWrapperFunctions: [
             {
-                "object": "Object",
-                "property": "freeze",
+                object: "Object",
+                property: "freeze",
             },
         ],
-        "react": {
-            "version": "latest",
+        react: {
+            version: "latest",
         },
     },
 };

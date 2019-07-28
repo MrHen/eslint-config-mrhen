@@ -1,2 +1,3 @@
 lib/
-src/example_failures
+node_modules/
+# src/example_failures

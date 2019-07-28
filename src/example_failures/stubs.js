@@ -4,7 +4,7 @@ export const loadData = function loadData() {
     });
 };
 
-export const updateData = function updateData(options) {
+export function updateData(options) {
     const {
         hello,
     } = options || {};

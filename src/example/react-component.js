@@ -8,8 +8,8 @@ import {
 
 class App extends React.PureComponent {
     state = {
-        "hello": null,
-        "loading": true,
+        hello: null,
+        loading: true,
     };
 
     componentDidMount = async () => {
@@ -17,23 +17,21 @@ class App extends React.PureComponent {
 
         // eslint-disable-next-line react/no-did-mount-set-state
         this.setState({
-            "hello": _.get(
-                response, "hello"
-            ),
-            "loading": false,
+            hello: _.get(response, "hello"),
+            loading: false,
         });
     };
 
     handleClick = () => {
         updateData({
-            "hello": ", mom!",
+            hello: ", mom!",
         });
     };
 
     render() {
         const {
             handleClick,
-            "state": {
+            state: {
                 loading,
                 hello,
             },

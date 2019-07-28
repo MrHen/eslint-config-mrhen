@@ -1,10 +1,10 @@
-export const loadData = function loadData() {
+export const loadData = function() {
     return Promise.resolve({
         "hello": "world",
     });
 };
 
-export const updateData = function updateData(options) {
+export const updateData = function(options) {
     const {
         hello,
     } = options || {};

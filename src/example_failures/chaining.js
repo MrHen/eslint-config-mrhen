@@ -24,3 +24,21 @@ foo.map((bar) => { return bar; }).flat();
 // dot-location error
 foo.map(plusOne).
     map(plusOne);
+
+foo(
+    "alfa");
+
+foo("alfa", "beta",
+    "charlie");
+
+foo("alfa", {
+    beta: "beta",
+    charlie: "charlie",
+}, "delta");
+
+foo(
+    {
+        beta: "beta",
+        charlie: "charlie",
+    }
+);

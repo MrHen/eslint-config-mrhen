@@ -13,7 +13,7 @@ let numbers = [
 let number = 0;
 
 const response = {
-    "status": STATUS_OKAY,
+    status: STATUS_OKAY,
 };
 
 const status = STATUS_OKAY;

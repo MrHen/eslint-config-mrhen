@@ -22,7 +22,7 @@ foo = { "foo": 0, "bar": 1 };
 
 // object-element-newline error
 foo = {
-    "foo": 0, "bar": 1,
+    "bar": 1, "foo": 0,
 };
 
 // object-curly-newline error
